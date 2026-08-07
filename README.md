@@ -17,6 +17,29 @@ This feature adds a dynamic **Advertisement / Notification Modal** to the Studen
 | Username | admin                           |
 | Password | Admin@123                       |
 
+### Configuration (`Web.config`)
+
+Update the following before running:
+
+```xml
+<connectionStrings>
+  <add name="StudentDB" connectionString="Server=...;Database=...;..." providerName="System.Data.SqlClient" />
+</connectionStrings>
+
+<appSettings>
+  <add key="SendGridApiKey" value="YOUR_KEY_HERE" />
+  <add key="FromEmail" value="verified-sender@yourdomain.com" />
+  <add key="AdminEmail" value="admin@yourdomain.com" />
+  <add key="ProfilePhotoUploadPath" value="~/Uploads/Students/" />
+  <add key="DocumentImageUploadPath" value="~/Uploads/DocumentImages/" />
+  <add key="MaxDocumentImageSizeMB" value="5" />
+</appSettings>
+```
+
+> **Security note:** never commit real API keys to source control. Rotate any
+> key that has been shared or exposed, and consider environment-specific
+> config transforms or a secrets manager for production.
+
 
 ## Table of Contents
 
